@@ -1,11 +1,11 @@
-async function helloWorld(event, context, callback) {
+async function helloworld(event, context, callback) {
   try {
-    callback(null, { message: "Good!" });
+    callback(null, { message: process.env.STAGE });
   } catch (e) {
     callback(e.toString());
   }
 }
 
 module.exports = {
-  helloWorld,
+  helloworld,
 };

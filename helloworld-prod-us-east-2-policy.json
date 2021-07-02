@@ -22,7 +22,7 @@
         "cloudformation:UpdateStack"
       ],
       "Resource": [
-        "arn:aws:cloudformation:us-east-2:*:stack/helloworld-stg/*"
+        "arn:aws:cloudformation:us-east-2:*:stack/helloworld-prod/*"
       ]
     },
     {
@@ -75,7 +75,7 @@
         "lambda:Update*"
       ],
       "Resource": [
-        "arn:aws:lambda:us-east-2:*:function:helloworld-stg-*"
+        "arn:aws:lambda:us-east-2:*:function:helloworld-prod-*"
       ]
     },
     {
@@ -106,7 +106,7 @@
       "Effect": "Allow",
       "Action": "kinesis:*",
       "Resource": [
-        "arn:aws:kinesis:*:*:stream/helloworld-stg-us-east-2"
+        "arn:aws:kinesis:*:*:stream/helloworld-prod-us-east-2"
       ]
     },
     {
@@ -119,14 +119,14 @@
         "iam:DeleteRole"
       ],
       "Resource": [
-        "arn:aws:iam::*:role/helloworld-stg-us-east-2-lambdaRole"
+        "arn:aws:iam::*:role/helloworld-prod-us-east-2-lambdaRole"
       ]
     },
     {
       "Effect": "Allow",
       "Action": "sqs:*",
       "Resource": [
-        "arn:aws:sqs:*:*:helloworld-stg-us-east-2"
+        "arn:aws:sqs:*:*:helloworld-prod-us-east-2"
       ]
     },
     {
@@ -177,7 +177,7 @@
         "events:Delete*"
       ],
       "Resource": [
-        "arn:aws:events:*:*:rule/helloworld-stg-us-east-2"
+        "arn:aws:events:*:*:rule/helloworld-prod-us-east-2"
       ]
     },
     {
@@ -186,7 +186,7 @@
         "events:DescribeRule"
       ],
       "Resource": [
-        "arn:aws:events:us-east-2:*:rule/helloworld-stg-*"
+        "arn:aws:events:us-east-2:*:rule/helloworld-prod-*"
       ]
     },
     {

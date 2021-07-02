@@ -2,9 +2,10 @@ version: 0.2
 
 phases:
   install:
-      commands:
+    commands:
       - npm install --silent --no-progress -g npm
       - npm install --silent --no-progress -g serverless
+      - npm install --silent --no-progress --save-dev serverless-webpack
   pre_build:
     commands:
       - npm install --no-progress --silent
@@ -12,9 +13,9 @@ phases:
       - mkdir target/prod
       - serverless package --package target/stg --stage stg -v -r us-east-2
       - serverless package --package target/prod --stage prod -v -r us-east-2
-      
+
 artifacts:
   files:
-  - target/**/*
-  - serverless.yml
-  - deploy.sh
+    - target/**/*
+    - serverless.yml
+    - deploy.sh

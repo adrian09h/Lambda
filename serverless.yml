@@ -1,4 +1,4 @@
-service: test
+service: helloWorld
 
 package:
   exclude:
@@ -9,41 +9,16 @@ plugins:
 
 provider:
   name: aws
-  runtime: nodejs6.10
-  region: 
-  stage: dev
-  timeout : 300  
-  iamRoleStatements:
-    -  Effect: "Allow"
-       Action:
-         - "s3:*"
-         - "dynamodb:*"
-         - "lambda:*"
-       Resource: "*"
+  runtime: nodejs8.10
+  region: us-east-2
+  stage: stg
   environment:
-    REGION: ${self:provider.region}
-    SOURCE: SYMBOL
-    STAGE: ${self:custom.stage}
-    STRARN : ${self:custom.strarn}      
-    SIGNALLEN : 50
-    TBLINTERVAL : 1d
-    UNIXINTERVAL : 86400
+    STAGE: ${opt:stage}
+
 custom:
   webpackIncludeModules: true
-  stage: ${opt:stage, self:provider.stage}
-  strarn : ${opt:strarn, self:provider.strarn}
-functions:
-  invoker:
-    handler: src/handler.invoker
-    events:
-      - stream:
-          arn: ${opt:strarn, self:provider.strarn}
-          batchSize: 100
-          startingPosition: LATEST
-          enabled: false
-  scrap:
-    handler: src/handler.scrap
+  stage: ${opt:stage}
 
-# resources:
-#   Resources:
-#     SymRecordDynamoDBTable: ${file(fixture/migrations/symbol_record.yml)}
+functions:
+  helloWorld:
+    handler: handler.helloWorld

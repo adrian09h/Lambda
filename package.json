@@ -4,17 +4,12 @@
   "description": "",
   "main": "handler.js",
   "scripts": {
-    "local": "sls invoke local -f scrap -p fixture/events/btc.json",
+    "local": "sls invoke local -f helloWorld",
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@bitbucket.org/winnergenic/lambdascraperddb.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/winnergenic/lambdascraperddb#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
@@ -38,10 +33,6 @@
   },
   "dependencies": {
     "aws-sdk": "^2.203.0",
-    "axios": "^0.18.0",
-    "dynamodb-data-types": "^3.0.1",
-    "generator-serverless-policy": "^3.1.0",
-    "ramda": "^0.25.0",
-    "source-map-support": "^0.5.3"
+    "generator-serverless-policy": "^3.1.0"
   }
 }

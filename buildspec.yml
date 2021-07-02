@@ -7,7 +7,7 @@ phases:
       - npm_config_user=root npm install --silent --no-progress -g serverless
   pre_build:
     commands:
-      - npm_config_user=root npm install --no-progress --silent
+      - sudo npm i --unsafe-perm
       - mkdir -p target/stg
       - mkdir -p target/prod
       - serverless package --package target/stg --stage stg -v -r us-east-2

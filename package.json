@@ -38,7 +38,7 @@
   },
   "dependencies": {
     "aws-sdk": "^2.203.0",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "dynamodb-data-types": "^3.0.1",
     "ramda": "^0.25.0",
     "source-map-support": "^0.5.3"

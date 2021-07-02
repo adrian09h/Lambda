@@ -3,11 +3,11 @@ version: 0.2
 phases:
   install:
     commands:
-      - npm_config_user=root npm install --silent --no-progress -g npm
-      - npm_config_user=root npm install --silent --no-progress -g serverless
+      - npm install --silent --no-progress -g npm
+      - npm install --silent --no-progress -g serverless
   pre_build:
     commands:
-      - sudo npm i --unsafe-perm
+      - npm install --no-progress --silent
       - mkdir -p target/stg
       - mkdir -p target/prod
       - serverless package --package target/stg --stage stg -v -r us-east-2
